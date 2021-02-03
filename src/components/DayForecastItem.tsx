@@ -1,8 +1,8 @@
 import { Card, Image, Text, Tooltip } from "@geist-ui/react";
 import { ReactElement } from "react";
 import styled from "styled-components";
-import { ForecastDay } from "./types";
-import { getDayOfWeek, getWeatherImage } from "./utils";
+import { ForecastDay } from "../types";
+import { getDayOfWeek, getWeatherImage } from "../utils";
 
 const DayForecastCardContent = styled.div`
   display: flex;

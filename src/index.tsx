@@ -2,7 +2,7 @@ import { CssBaseline, GeistProvider } from "@geist-ui/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { SWRConfig } from "swr";
-import App from "./App";
+import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import { fetcher } from "./utils";
 

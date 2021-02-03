@@ -2,10 +2,10 @@ import { Text } from "@geist-ui/react";
 import { ReactElement, Suspense } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
-import { getLocationForecasts } from "./apis";
+import { getLocationForecasts } from "../apis";
+import { ForecastDays, ForecastLocation } from "../types";
 import DayForecastItem from "./DayForecastItem";
 import ForecastLoading from "./ForecastLoading";
-import { ForecastDays, ForecastLocation } from "./types";
 
 const StyledDateForecastList = styled.div``;
 

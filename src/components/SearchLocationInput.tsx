@@ -1,9 +1,9 @@
 import { AutoComplete } from "@geist-ui/react";
 import { ReactElement, useCallback, useMemo, useState } from "react";
 import useSWR from "swr";
-import { searchLocations } from "./apis";
-import { ForecastLocation } from "./types";
-import { mapLocationToAutoComplete } from "./utils";
+import { searchLocations } from "../apis";
+import { ForecastLocation } from "../types";
+import { mapLocationToAutoComplete } from "../utils";
 
 type SearchLocationInput = {
   onSelect: (location?: ForecastLocation) => void;
@@ -12,7 +12,7 @@ type SearchLocationInput = {
 function SearchLocationInput(props: SearchLocationInput): ReactElement {
   const [query, setQuery] = useState("");
   const { data } = useSWR<ForecastLocation[]>(
-    query ? searchLocations(query) : null
+    query ? searchLocations(query) : null,
   );
 
   const handleSearch = useCallback((currentValue: string) => {
@@ -22,11 +22,11 @@ function SearchLocationInput(props: SearchLocationInput): ReactElement {
   const handleSelect = useCallback(
     (value: string) => {
       const location = data?.find(
-        (location) => location.woeid.toString() === value
+        (location) => location.woeid.toString() === value,
       );
       props.onSelect(location);
     },
-    [data]
+    [data],
   );
 
   const options = useMemo(() => mapLocationToAutoComplete(data || []), [data]);

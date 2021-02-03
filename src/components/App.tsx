@@ -1,9 +1,9 @@
 import { Text } from "@geist-ui/react";
 import { lazy, ReactElement, Suspense, useCallback, useState } from "react";
 import styled from "styled-components";
+import { ForecastLocation } from "../types";
 import ForecastLoading from "./ForecastLoading";
 import SearchLocationInput from "./SearchLocationInput";
-import { ForecastLocation } from "./types";
 
 const DayForecastList = lazy(() => import("./DayForecastList"));
 
