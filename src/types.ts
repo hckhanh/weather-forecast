@@ -32,3 +32,7 @@ export type ForecastDay = {
 export type ForecastDays = {
   consolidated_weather: ForecastDay[];
 };
+
+export type ThemeComponent = {
+  onSwitchTheme: () => void;
+};

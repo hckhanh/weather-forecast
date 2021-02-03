@@ -1,4 +1,5 @@
 import { AutoCompleteOptions } from "@geist-ui/react/dist/auto-complete/auto-complete";
+import { ThemeTypes } from "@geist-ui/react/dist/utils/prop-types";
 import { apiURL, baseURL } from "./apis";
 import { ForecastLocation } from "./types";
 
@@ -35,3 +36,8 @@ export const getDayOfWeek = (day: string): string => {
 
 export const getWeatherImage = (weatherState: string): string =>
   `${baseURL}/static/img/weather/${weatherState}.svg`;
+
+export const getTheme = (): string | null => localStorage.getItem("theme");
+
+export const saveTheme = (theme: ThemeTypes): void =>
+  localStorage.setItem("theme", theme);

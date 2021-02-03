@@ -1,4 +1,3 @@
-import { CssBaseline, GeistProvider } from "@geist-ui/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { SWRConfig } from "swr";
@@ -11,14 +10,11 @@ const swrOptions = {
 };
 
 ReactDOM.render(
-  <GeistProvider>
-    <CssBaseline />
-    <SWRConfig value={swrOptions}>
-      <StrictMode>
-        <App />
-      </StrictMode>
-    </SWRConfig>
-  </GeistProvider>,
+  <SWRConfig value={swrOptions}>
+    <StrictMode>
+      <App />
+    </StrictMode>
+  </SWRConfig>,
   document.getElementById("root"),
 );
 
