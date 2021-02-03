@@ -1,20 +1,12 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { SWRConfig } from "swr";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
-import { fetcher } from "./utils";
-
-const swrOptions = {
-  fetcher,
-};
 
 ReactDOM.render(
-  <SWRConfig value={swrOptions}>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </SWRConfig>,
+  <StrictMode>
+    <App />
+  </StrictMode>,
   document.getElementById("root"),
 );
 

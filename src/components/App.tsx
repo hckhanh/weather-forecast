@@ -1,8 +1,9 @@
 import { Text } from "@geist-ui/react";
 import { lazy, ReactElement, Suspense, useCallback, useState } from "react";
 import styled from "styled-components";
-import { withTheme } from "../withTheme";
+import { withSWRConfig } from "../hoc/withSWRConfig";
 import { ForecastLocation, ThemeComponent } from "../types";
+import { withTheme } from "../withTheme";
 import ForecastLoading from "./ForecastLoading";
 import SearchLocationInput from "./SearchLocationInput";
 import SwitchThemeButton from "./SwitchThemeButton";
@@ -44,4 +45,4 @@ function App(props: ThemeComponent): ReactElement {
   );
 }
 
-export default withTheme(App);
+export default withSWRConfig(withTheme(App));
