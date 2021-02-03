@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# weather-forecast
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Requirements
+
+- Node v14.5.4
+- Yarn v1.22.10
+- A proxy server to bypass CORS problem of [metaweather.com](https://www.metaweather.com/api/) (public-apis/public-apis#644)
+
+> For the proxy server, you can use https://github.com/Rob--W/cors-anywhere
+
+## Configurations
+
+| Variable               | Default | Description                 |
+| ---------------------- | :-----: | --------------------------- |
+| REACT_APP_PROXY_SERVER |         | Proxy server to bypass CORS |
 
 ## Available Scripts
 
