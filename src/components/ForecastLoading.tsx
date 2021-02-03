@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 
 function ForecastLoading(): ReactElement {
   return (
-    <Text small>
+    <Text size={16}>
       <Loading>Loading</Loading>
     </Text>
   );
