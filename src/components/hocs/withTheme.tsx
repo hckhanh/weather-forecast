@@ -1,7 +1,7 @@
 import { CssBaseline, GeistProvider } from "@geist-ui/react";
 import { FC, useCallback, useState } from "react";
-import { ThemeComponent } from "./types";
-import { getTheme, saveTheme } from "./utils";
+import { ThemeComponent } from "../../types";
+import { getTheme, saveTheme } from "../../utils";
 
 export function withTheme(Component: FC<ThemeComponent>): FC {
   return function WithThemeComponent() {

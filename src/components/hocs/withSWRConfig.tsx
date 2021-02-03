@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SWRConfig } from "swr";
-import { fetcher } from "../utils";
+import { fetcher } from "../../utils";
 
 const swrOptions = {
   fetcher,

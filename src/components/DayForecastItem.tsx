@@ -1,5 +1,5 @@
 import { Card, Image, Text, Tooltip } from "@geist-ui/react";
-import { ReactElement } from "react";
+import { memo, ReactElement } from "react";
 import styled from "styled-components";
 import { ForecastDay } from "../types";
 import { getDayOfWeek, getWeatherImage } from "../utils";
@@ -61,4 +61,4 @@ function DayForecastItem(props: DayForecastItem): ReactElement {
   );
 }
 
-export default DayForecastItem;
+export default memo(DayForecastItem);

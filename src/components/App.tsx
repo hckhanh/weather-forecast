@@ -1,9 +1,9 @@
 import { Text } from "@geist-ui/react";
 import { lazy, ReactElement, Suspense, useCallback, useState } from "react";
 import styled from "styled-components";
-import { withSWRConfig } from "../hoc/withSWRConfig";
+import { withSWRConfig } from "./hocs/withSWRConfig";
 import { ForecastLocation, ThemeComponent } from "../types";
-import { withTheme } from "../withTheme";
+import { withTheme } from "./hocs/withTheme";
 import ForecastLoading from "./ForecastLoading";
 import SearchLocationInput from "./SearchLocationInput";
 import SwitchThemeButton from "./SwitchThemeButton";
