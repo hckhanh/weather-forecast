@@ -9,6 +9,8 @@ type SearchLocationInput = {
   onSelect: (location?: ForecastLocation) => void;
 };
 
+let selecting = false;
+
 function SearchLocationInput(props: SearchLocationInput): ReactElement {
   const [query, setQuery] = useState("");
   const { data } = useSWR<ForecastLocation[]>(
@@ -16,14 +18,17 @@ function SearchLocationInput(props: SearchLocationInput): ReactElement {
   );
 
   const handleSearch = useCallback((currentValue: string) => {
-    setQuery(currentValue);
+    if (selecting) {
+      selecting = false;
+    } else {
+      setQuery(currentValue);
+    }
   }, []);
 
   const handleSelect = useCallback(
     (value: string) => {
-      const location = data?.find(
-        (location) => location.woeid.toString() === value,
-      );
+      selecting = true;
+      const location = data?.find((location) => location.title === value);
       props.onSelect(location);
     },
     [data],
@@ -35,7 +40,7 @@ function SearchLocationInput(props: SearchLocationInput): ReactElement {
       width="300px"
       placeholder="Search..."
       options={options}
-      onSearch={handleSearch}
+      onChange={handleSearch}
       onSelect={handleSelect}
       searching={!data && Boolean(query)}
       clearable
