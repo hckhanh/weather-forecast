@@ -37,7 +37,8 @@ export const getDayOfWeek = (day: string): string => {
 export const getWeatherImage = (weatherState: string): string =>
   `${baseURL}/static/img/weather/${weatherState}.svg`;
 
-export const getTheme = (): string | null => localStorage.getItem("theme");
+export const getTheme = (): string | null =>
+  localStorage.getItem("theme") || "light";
 
 export const saveTheme = (theme: ThemeTypes): void =>
   localStorage.setItem("theme", theme);
