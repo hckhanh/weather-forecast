@@ -16,7 +16,7 @@ export const mapLocationToAutoComplete = (
 ): AutoCompleteOptions =>
   locations.map((location) => ({
     label: location.title,
-    value: location.woeid.toString(),
+    value: location.title,
   }));
 
 const daysOfWeek = [

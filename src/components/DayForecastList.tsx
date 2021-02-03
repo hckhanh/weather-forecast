@@ -35,7 +35,7 @@ function DayForecastItems(props: DayForecastItems): ReactElement {
   );
   return (
     <DayForecastContent>
-      {data!.consolidated_weather.map((day) => (
+      {data?.consolidated_weather.map((day) => (
         <StyledDateForecastItem key={day.id} day={day} />
       ))}
     </DayForecastContent>
