@@ -2,6 +2,7 @@ import { AutoComplete } from "@geist-ui/react";
 import { ReactElement, useCallback, useMemo, useState } from "react";
 import useSWR from "swr";
 import { searchLocations } from "../apis";
+import useDebounce from "../hooks/useDebounce";
 import { ForecastLocation } from "../types";
 import { mapLocationToAutoComplete } from "../utils";
 
@@ -13,8 +14,9 @@ let selecting = false;
 
 function SearchLocationInput(props: SearchLocationInput): ReactElement {
   const [query, setQuery] = useState("");
+  const debounceQuery = useDebounce(query, 250);
   const { data } = useSWR<ForecastLocation[]>(
-    query ? searchLocations(query) : null,
+    debounceQuery ? searchLocations(debounceQuery) : null,
   );
 
   const handleSearch = useCallback((currentValue: string) => {
@@ -38,7 +40,7 @@ function SearchLocationInput(props: SearchLocationInput): ReactElement {
   return (
     <AutoComplete
       width="300px"
-      placeholder="Search..."
+      placeholder="Search by location name..."
       options={options}
       onChange={handleSearch}
       onSelect={handleSelect}
