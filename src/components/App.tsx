@@ -3,7 +3,7 @@ import { lazy, ReactElement, Suspense, useCallback, useState } from "react";
 import styled from "styled-components";
 import { withSWRConfig } from "../hocs/withSWRConfig";
 import { withTheme } from "../hocs/withTheme";
-import { ForecastLocation, ThemeComponent } from "../types";
+import { ForecastLocation, ThemeComponentProps } from "../types";
 import ForecastLoading from "./ForecastLoading";
 import SearchLocationInput from "./SearchLocationInput";
 import SwitchThemeButton from "./SwitchThemeButton";
@@ -22,7 +22,7 @@ const AppHeader = styled.div`
   padding-top: 20px;
 `;
 
-function App(props: ThemeComponent): ReactElement {
+function App(props: ThemeComponentProps): ReactElement {
   const [location, setLocation] = useState<ForecastLocation>();
 
   const handleSelectLocation = useCallback((value?: ForecastLocation) => {
