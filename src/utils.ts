@@ -1,15 +1,19 @@
 import { AutoCompleteOptions } from "@geist-ui/react/dist/auto-complete/auto-complete";
 import { ThemeTypes } from "@geist-ui/react/dist/utils/prop-types";
-import { apiURL, baseURL } from "./apis";
+import { apiURL } from "./apis";
 import { ForecastLocation } from "./types";
+import joinUrl from "url-join";
 
-const fetchWithProxy = (url: string): Promise<Response> =>
-  fetch(`${process.env.REACT_APP_PROXY_SERVER}/${url}`, {
-    headers: { Origin: "null" },
-  });
+export const getAPIFullPath = (
+  proxyServer = "",
+  apiURL: string,
+  apiEndpoint: string,
+): string => joinUrl(proxyServer, apiURL, apiEndpoint);
 
 export const fetcher = (url: string): Promise<Response> =>
-  fetchWithProxy(apiURL + url).then((r) => r.json());
+  fetch(getAPIFullPath(process.env.REACT_APP_PROXY_SERVER, apiURL, url), {
+    headers: { Origin: "null" },
+  }).then((r) => r.json());
 
 export const mapLocationToAutoComplete = (
   locations: ForecastLocation[],
@@ -33,9 +37,6 @@ export const getDayOfWeek = (day: string): string => {
   const date = new Date(day);
   return daysOfWeek[date.getDay()];
 };
-
-export const getWeatherImage = (weatherState: string): string =>
-  `${baseURL}/static/img/weather/${weatherState}.svg`;
 
 export const getTheme = (): string | null =>
   localStorage.getItem("theme") || "light";
