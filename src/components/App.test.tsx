@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import App from "./components/App";
+import App from "./App";
 
 test("renders complete app", () => {
   render(<App />);
@@ -10,12 +10,12 @@ test("renders complete app", () => {
   expect(searchInput).toBeInTheDocument();
 });
 
-test("searches input receive query 'Ho Chi Minh' and show results", async () => {
+test("searches 'Ho Chi Minh' and show results", async () => {
   render(<App />);
   const searchInput = screen.getByPlaceholderText(
     /Search by location name.../i,
   );
-  userEvent.type(searchInput, "Ho Chi Minh");
+  await userEvent.type(searchInput, "Ho Chi Minh", { delay: 100 });
 
   const option = await screen.findByText(/Ho Chi Minh City/i);
   userEvent.click(option);

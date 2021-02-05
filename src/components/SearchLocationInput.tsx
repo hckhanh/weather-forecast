@@ -14,7 +14,7 @@ let selecting = false;
 
 function SearchLocationInput(props: SearchLocationInput): ReactElement {
   const [query, setQuery] = useState("");
-  const debounceQuery = useDebounce(query, 250);
+  const debounceQuery = useDebounce(query.trim(), 250);
   const { data } = useSWR<ForecastLocation[]>(
     debounceQuery ? searchLocations(debounceQuery) : null,
   );
