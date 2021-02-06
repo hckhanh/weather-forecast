@@ -1,5 +1,7 @@
 # weather-forecast
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_weather-forecast&metric=alert_status)](https://sonarcloud.io/dashboard?id=hckhanh_weather-forecast)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Requirements
