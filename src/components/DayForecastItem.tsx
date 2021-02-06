@@ -54,6 +54,7 @@ function DayForecastItem(props: DayForecastItem): ReactElement {
           <DayForecastImage
             width={48}
             height={48}
+            alt={props.day.weather_state_name}
             src={getWeatherImage(props.day.weather_state_abbr)}
           />
         </Tooltip>
