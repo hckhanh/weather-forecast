@@ -34,7 +34,7 @@ self.addEventListener("message", async function (event) {
   }
 
   const allClients = await self.clients.matchAll();
-  const allClientIds = allClients.map((client) => client.id);
+  const allClientIds = allClients.map((c) => c.id);
 
   switch (event.data) {
     case "KEEPALIVE_REQUEST": {
@@ -70,9 +70,7 @@ self.addEventListener("message", async function (event) {
     }
 
     case "CLIENT_CLOSED": {
-      const remainingClients = allClients.filter((client) => {
-        return client.id !== clientId;
-      });
+      const remainingClients = allClients.filter((c) => c.id !== clientId);
 
       // Unregister itself when there are no more clients
       if (remainingClients.length === 0) {
