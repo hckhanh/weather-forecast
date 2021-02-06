@@ -1,17 +1,14 @@
 import { AutoCompleteOptions } from "@geist-ui/react/dist/auto-complete/auto-complete";
 import { ThemeTypes } from "@geist-ui/react/dist/utils/prop-types";
+import joinUrl from "url-join";
 import { apiURL } from "./apis";
 import { ForecastLocation } from "./types";
-import joinUrl from "url-join";
 
-export const getAPIFullPath = (
-  proxyServer = "",
-  apiURL: string,
-  apiEndpoint: string,
-): string => joinUrl(proxyServer, apiURL, apiEndpoint);
+export const getAPIFullPath = (apiURL: string, apiEndpoint: string): string =>
+  joinUrl(process.env.REACT_APP_PROXY_SERVER || "", apiURL, apiEndpoint);
 
 export const fetcher = (url: string): Promise<Response> =>
-  fetch(getAPIFullPath(process.env.REACT_APP_PROXY_SERVER, apiURL, url), {
+  fetch(getAPIFullPath(apiURL, url), {
     headers: { Origin: "null" },
   }).then((r) => r.json());
 
