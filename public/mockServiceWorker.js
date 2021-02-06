@@ -16,7 +16,7 @@ self.addEventListener("install", function () {
   return self.skipWaiting();
 });
 
-self.addEventListener("activate", async function (event) {
+self.addEventListener("activate", async function () {
   return self.clients.claim();
 });
 
@@ -133,7 +133,7 @@ self.addEventListener("fetch", function (event) {
       const reqHeaders = serializeHeaders(request.headers);
       const body = await request.text();
 
-      const rawClientMessage = await sendToClient(client, {
+      const clientMessage = await sendToClient(client, {
         type: "REQUEST",
         payload: {
           id: requestId,
@@ -153,8 +153,6 @@ self.addEventListener("fetch", function (event) {
           keepalive: request.keepalive,
         },
       });
-
-      const clientMessage = rawClientMessage;
 
       switch (clientMessage.type) {
         case "MOCK_SUCCESS": {
@@ -277,7 +275,7 @@ function ensureKeys(keys, obj) {
 function uuidv4() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0;
-    const v = c == "x" ? r : (r & 0x3) | 0x8;
+    const v = c === "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
 }
