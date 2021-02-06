@@ -12,9 +12,7 @@ describe("utils", () => {
   describe("getAPIFullPath", () => {
     test("gets full path of api url with proxyServer, apiURL, apiEndpoint", () => {
       const api = getAPIFullPath("https://weather.com/", "/location?q=City");
-      expect(api).toBe(
-        "https://proxyserver.com/https://weather.com/location?q=City",
-      );
+      expect(api).toBe("https://weather.com/location?q=City");
     });
   });
 
