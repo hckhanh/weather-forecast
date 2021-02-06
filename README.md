@@ -1,6 +1,9 @@
 # weather-forecast
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_weather-forecast&metric=alert_status)](https://sonarcloud.io/dashboard?id=hckhanh_weather-forecast)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_weather-forecast&metric=code_smells)](https://sonarcloud.io/dashboard?id=hckhanh_weather-forecast)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_weather-forecast&metric=bugs)](https://sonarcloud.io/dashboard?id=hckhanh_weather-forecast)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_weather-forecast&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=hckhanh_weather-forecast)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_weather-forecast&metric=security_rating)](https://sonarcloud.io/dashboard?id=hckhanh_weather-forecast)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
