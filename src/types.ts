@@ -1,3 +1,5 @@
+import { Props as GeistProviderProps } from "@geist-ui/react/dist/geist-provider/geist-provider";
+
 export type ForecastLocation = {
   title: string;
   location_type:
@@ -36,3 +38,5 @@ export type ForecastDays = {
 export type ThemeComponentProps = {
   onSwitchTheme: () => void;
 };
+
+export type ThemeType = GeistProviderProps["themeType"];
