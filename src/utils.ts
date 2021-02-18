@@ -1,8 +1,7 @@
 import { AutoCompleteOptions } from "@geist-ui/react/dist/auto-complete/auto-complete";
-import { ThemeTypes } from "@geist-ui/react/dist/utils/prop-types";
 import joinUrl from "url-join";
 import { apiURL } from "./apis";
-import { ForecastLocation } from "./types";
+import { ForecastLocation, ThemeType } from "./types";
 
 export const getAPIFullPath = (apiURL: string, apiEndpoint: string): string =>
   joinUrl(process.env.REACT_APP_PROXY_SERVER || "", apiURL, apiEndpoint);
@@ -35,8 +34,8 @@ export const getDayOfWeek = (day: string): string => {
   return daysOfWeek[date.getDay()];
 };
 
-export const getTheme = (): string | null =>
+export const getTheme = (): ThemeType =>
   localStorage.getItem("theme") || "light";
 
-export const saveTheme = (theme: ThemeTypes): void =>
-  localStorage.setItem("theme", theme);
+export const saveTheme = (theme: ThemeType): unknown =>
+  theme && localStorage.setItem("theme", theme);
