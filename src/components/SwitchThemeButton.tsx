@@ -3,9 +3,9 @@ import { Moon, Sun } from "@geist-ui/react-icons";
 import { ReactElement } from "react";
 import { getTheme } from "../utils";
 
-type SwitchThemeButton = { onClick: () => void };
+type SwitchThemeButtonProps = { onClick: () => void };
 
-function SwitchThemeButton(props: SwitchThemeButton): ReactElement {
+function SwitchThemeButton(props: SwitchThemeButtonProps): ReactElement {
   const currentTheme = getTheme();
   return (
     <Button

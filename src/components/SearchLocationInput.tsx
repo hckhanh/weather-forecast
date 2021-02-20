@@ -6,13 +6,13 @@ import useDebounce from "../hooks/useDebounce";
 import { ForecastLocation } from "../types";
 import { mapLocationToAutoComplete } from "../utils";
 
-type SearchLocationInput = {
+type SearchLocationInputProps = {
   onSelect: (location?: ForecastLocation) => void;
 };
 
 let selecting = false;
 
-function SearchLocationInput(props: SearchLocationInput): ReactElement {
+function SearchLocationInput(props: SearchLocationInputProps): ReactElement {
   const [query, setQuery] = useState("");
   const debounceQuery = useDebounce(query.trim(), 250);
   const { data } = useSWR<ForecastLocation[]>(
@@ -30,7 +30,7 @@ function SearchLocationInput(props: SearchLocationInput): ReactElement {
   const handleSelect = useCallback(
     (value: string) => {
       selecting = true;
-      const location = data?.find((location) => location.title === value);
+      const location = data?.find((l) => l.title === value);
       props.onSelect(location);
     },
     [data],

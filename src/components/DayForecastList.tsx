@@ -24,11 +24,11 @@ const DayForecastContent = styled.div`
   flex-wrap: wrap;
 `;
 
-type DayForecastItems = {
+type DayForecastItemsProps = {
   location: ForecastLocation;
 };
 
-function DayForecastItems(props: DayForecastItems): ReactElement {
+function DayForecastItems(props: DayForecastItemsProps): ReactElement {
   const { data } = useSWR<ForecastDays>(
     getLocationForecasts(props.location.woeid),
     { suspense: true },
@@ -42,11 +42,11 @@ function DayForecastItems(props: DayForecastItems): ReactElement {
   );
 }
 
-type DayForecastList = {
+type DayForecastListProps = {
   location: ForecastLocation;
 };
 
-function DayForecastList(props: DayForecastList): ReactElement {
+function DayForecastList(props: DayForecastListProps): ReactElement {
   return (
     <StyledDateForecastList>
       <DayForecastTitle h2>{props.location.title}</DayForecastTitle>

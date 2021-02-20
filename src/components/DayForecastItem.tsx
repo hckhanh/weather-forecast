@@ -25,12 +25,12 @@ const DayForecastImage = styled(Image)`
   margin: unset !important;
 `;
 
-type DayForecastItem = {
+type DayForecastItemProps = {
   className?: string;
   day: ForecastDay;
 };
 
-function DayForecastItem(props: DayForecastItem): ReactElement {
+function DayForecastItem(props: DayForecastItemProps): ReactElement {
   return (
     <Card width="250px" className={props.className}>
       <DayForecastCardContent>

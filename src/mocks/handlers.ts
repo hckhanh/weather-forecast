@@ -13,7 +13,9 @@ export const handlers = [
     return res(context.json(hcm));
   }),
   rest.get(getWeatherImage("*"), async (req, res, context) => {
-    const image = await fetch(weatherIcon).then((res) => res.arrayBuffer());
+    const image = await fetch(weatherIcon).then((response) =>
+      response.arrayBuffer(),
+    );
     return res(
       context.set("Content-Length", image.byteLength.toString()),
       context.set("Content-Type", "image/svg+xml"),
