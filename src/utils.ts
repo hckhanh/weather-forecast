@@ -1,13 +1,9 @@
 import { AutoCompleteOptions } from "@geist-ui/react/dist/auto-complete/auto-complete";
-import joinUrl from "url-join";
-import { apiURL } from "./apis";
+import { getFullApiPath } from "./apis";
 import { ForecastLocation, ThemeType } from "./types";
 
-export const getAPIFullPath = (apiEndpoint: string): string =>
-  joinUrl(process.env.REACT_APP_PROXY_SERVER || "", apiURL, apiEndpoint);
-
 export const fetcher = (url: string): Promise<Response> =>
-  fetch(getAPIFullPath(url), { headers: { Origin: "null" } }).then((r) =>
+  fetch(getFullApiPath(url), { headers: { Origin: "null" } }).then((r) =>
     r.json(),
   );
 

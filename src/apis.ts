@@ -10,3 +10,6 @@ export const getLocationForecasts = (woeid: number): string => `/${woeid}`;
 
 export const getWeatherImage = (weatherState: string): string =>
   joinUrl(baseURL, "/static/img/weather", `${weatherState}.svg`);
+
+export const getFullApiPath = (apiEndpoint: string): string =>
+  joinUrl(process.env.REACT_APP_PROXY_SERVER || "", apiURL, apiEndpoint);
