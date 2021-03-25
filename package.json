@@ -56,7 +56,7 @@
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.21.0",
     "eslint-plugin-react": "^7.22.0",
-    "msw": "^0.27.1",
+    "msw": "^0.28.0",
     "prettier": "2.2.1"
   }
 }
