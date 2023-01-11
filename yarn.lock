@@ -16719,14 +16719,14 @@ typescript@^4.2.3:
     swr: ^0.5.4
     typescript: ^4.2.3
     url-join: ^4.0.1
-    web-vitals: ^1.1.1
+    web-vitals: ^3.1.1
   languageName: unknown
   linkType: soft
 
-"web-vitals@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "web-vitals@npm:1.1.1"
-  checksum: e84e449f46d5bdae9bc3d9d03647e654970bbe7fd448ecc8051ae06bcb869aa29cdcd16486786db416ca7a6e43a2f87e0f66662437ec5679761bcdd753a8c055
+"web-vitals@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "web-vitals@npm:3.1.1"
+  checksum: eee15ed85b72f2e1c5a4b9eee7b57f638b4206a6a7a8760b4a9b2d104a48a833c8a6d16fff76d71352fe73e86db9294e47c017ac6cb09e3fd126e9a9e9b5f932
   languageName: node
   linkType: hard
 
