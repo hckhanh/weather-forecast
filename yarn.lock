@@ -15755,12 +15755,14 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"swr@npm:^0.5.4":
-  version: 0.5.4
-  resolution: "swr@npm:0.5.4"
+"swr@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "swr@npm:2.0.1"
+  dependencies:
+    use-sync-external-store: ^1.2.0
   peerDependencies:
-    react: ^16.11.0 || ^17.0.0
-  checksum: fbca133ffdd07d1ea8539eca7bac5538ace63c976a5fca9aed7e690c24e0a9b64f3f34066c7ad2f8b805adcb5efc161a669320326942a123641d7e9705c7477f
+    react: ^16.11.0 || ^17.0.0 || ^18.0.0
+  checksum: 0d559d78602be33d8b1aed99f9609676f5daf0fda647f97cb5eecb166f8c010755ff92741ab0760ddc6a6cd5386e71fe50b2da4d7bef9a444554f8ee4e09faa8
   languageName: node
   linkType: hard
 
@@ -16476,6 +16478,15 @@ typescript@^4.2.3:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 013abe2a5c4886d139a0a8e2d18cfb7aba941a46b5aad5b0922a9a66c38af2b5c34446389ccb39363f97ad47ab5669b42dcd441395d7f7545821a248fb852aa6
+  languageName: node
+  linkType: hard
+
 "use@npm:^3.1.0":
   version: 3.1.1
   resolution: "use@npm:3.1.1"
@@ -16716,7 +16727,7 @@ typescript@^4.2.3:
     react-dom: ^17.0.2
     react-scripts: 4.0.3
     styled-components: ^5.2.1
-    swr: ^0.5.4
+    swr: ^2.0.1
     typescript: ^4.2.3
     url-join: ^4.0.1
     web-vitals: ^1.1.1
