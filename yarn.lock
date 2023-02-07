@@ -3560,10 +3560,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14":
-  version: 14.14.33
-  resolution: "@types/node@npm:14.14.33"
-  checksum: f269fc728f6547345e000a0d86e1be802b475bb6759493208d7bc1cf8d49e838d3952ae54b8c7cd2ce168f9ef50c30e0d7084064a5f98db87efc833a38d955af
+"@types/node@npm:^18":
+  version: 18.13.0
+  resolution: "@types/node@npm:18.13.0"
+  checksum: 7c999624ab39ec735220bb413b1dbe603316c857b806ab3cae67fdf33f60c51611a194afd1aef5af3d4e2a94cf2bf7add7ded7c274dd3c981805bfa835c959f2
   languageName: node
   linkType: hard
 
@@ -16701,7 +16701,7 @@ typescript@^4.2.3:
     "@testing-library/react": ^11.2.5
     "@testing-library/user-event": ^13.0.16
     "@types/jest": ^26
-    "@types/node": ^14
+    "@types/node": ^18
     "@types/react": ^17
     "@types/react-dom": ^17
     "@types/styled-components": ^5
